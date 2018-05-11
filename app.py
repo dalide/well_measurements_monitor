@@ -120,11 +120,11 @@ app.layout = html.Div([
 			dcc.Graph(
 				id='well-plot',
 			),
-			dcc.Interval(
-				id='interval-component',
-				interval = 1*500,
-				n_intervals = 0
-				)
+			# dcc.Interval(
+			# 	id='interval-component',
+			# 	interval = 1*500,
+			# 	n_intervals = 0
+			# 	)
 			],
 			style = {'margin-top': '20'},
 			className = 'nine columns')
@@ -136,8 +136,9 @@ app.layout = html.Div([
 @app.callback(
 	Output('well-plot','figure'),
 	[Input('measurements', 'values'),
-	Input('interval-component', 'n_intervals')])
-def update_graph(values, n):
+	# Input('interval-component', 'n_intervals')
+	])
+def update_graph(values):
 	fig = py.tools.make_subplots(rows = 3, cols = 1, vertical_spacing=0.2)
 	fig['layout']['margin']={
 		'l': 80,
@@ -147,7 +148,7 @@ def update_graph(values, n):
 	}
 
 
-	data = raw_data[2*n:1000+2*n]
+	data = raw_data[:]
 
 	fig['layout'].update(showlegend=False)
 
