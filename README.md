@@ -14,4 +14,4 @@ To do list:
 * utilize streaming tools like [Spark Streaming](https://spark.apache.org/streaming/) or [Streamz](https://github.com/mrocklin/streamz)
 * ...
 
-The app is deployed on heroku, here is the [link](https://well-measurements-monitor-app.herokuapp.com/)
+The app is deployed on heroku, here is the [link](https://well-measurements-monitor-app.herokuapp.com/). It seems a little stuck right now. 
