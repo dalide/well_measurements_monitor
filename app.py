@@ -11,7 +11,7 @@ app.title = 'Well Measurements Monitoring'
 app.css.append_css({'external_url': 'https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css'})  # noqa: E501
 server = app.server
 
-raw_data = pd.read_csv('sample_data.csv', nrows = 40000)
+raw_data = pd.read_csv('sample_data.csv', nrows = 20000)
 
 raw_data['TimeStamp'] = pd.to_datetime(raw_data['TimeStamp'])
 # raw_data = raw_data.set_index('TimeStamp')
@@ -195,4 +195,4 @@ def update_graph(values, n):
 	return fig
 
 if __name__ == '__main__':
-        app.run_server(debug=False)
+	app.run_server(debug=True)
